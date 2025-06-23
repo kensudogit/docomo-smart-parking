@@ -148,7 +148,7 @@ router.get('/:id/history', [
     }
 
     // 履歴フィルター
-    let historyFilter = {};
+    const historyFilter = {};
     if (startDate || endDate) {
       historyFilter.timestamp = {};
       if (startDate) historyFilter.timestamp.$gte = new Date(startDate);
@@ -157,9 +157,8 @@ router.get('/:id/history', [
 
     const history = parkingSpace.occupancyHistory
       .filter(entry => {
-        if (startDate && entry.timestamp < new Date(startDate)) return false;
-        if (endDate && entry.timestamp > new Date(endDate)) return false;
-        return true;
+        return !(startDate && entry.timestamp < new Date(startDate)) &&
+               !(endDate && entry.timestamp > new Date(endDate));
       })
       .sort((a, b) => b.timestamp - a.timestamp)
       .slice(0, parseInt(limit));
