@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.docomo.admin.entity.mongo.MongoTransactionTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-06-23T21:27:36.183Z" hostname="A8" time="0.018">
+  <properties/>
+  <testcase name="testTransactionStatusEnum()" classname="com.docomo.admin.entity.mongo.MongoTransactionTest" time="0.002"/>
+  <testcase name="testMongoTransactionEquality()" classname="com.docomo.admin.entity.mongo.MongoTransactionTest" time="0.0"/>
+  <testcase name="testMongoTransactionSettersAndGetters()" classname="com.docomo.admin.entity.mongo.MongoTransactionTest" time="0.001"/>
+  <testcase name="testMongoTransactionConstructor()" classname="com.docomo.admin.entity.mongo.MongoTransactionTest" time="0.001"/>
+  <testcase name="testPaymentMethodEnum()" classname="com.docomo.admin.entity.mongo.MongoTransactionTest" time="0.0"/>
+  <testcase name="testMongoTransactionCreation()" classname="com.docomo.admin.entity.mongo.MongoTransactionTest" time="0.001"/>
+  <testcase name="testMongoTransactionToString()" classname="com.docomo.admin.entity.mongo.MongoTransactionTest" time="0.009"/>
+  <testcase name="testNullValues()" classname="com.docomo.admin.entity.mongo.MongoTransactionTest" time="0.002"/>
+  <testcase name="testDurationCalculation()" classname="com.docomo.admin.entity.mongo.MongoTransactionTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

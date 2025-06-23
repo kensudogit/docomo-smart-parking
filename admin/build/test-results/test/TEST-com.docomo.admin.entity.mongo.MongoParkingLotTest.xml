@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.docomo.admin.entity.mongo.MongoParkingLotTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-06-23T21:27:36.097Z" hostname="A8" time="0.085">
+  <properties/>
+  <testcase name="testMongoParkingLotSettersAndGetters()" classname="com.docomo.admin.entity.mongo.MongoParkingLotTest" time="0.067"/>
+  <testcase name="testAvailableSpacesValidation()" classname="com.docomo.admin.entity.mongo.MongoParkingLotTest" time="0.0"/>
+  <testcase name="testMongoParkingLotCreation()" classname="com.docomo.admin.entity.mongo.MongoParkingLotTest" time="0.002"/>
+  <testcase name="testMongoParkingLotConstructor()" classname="com.docomo.admin.entity.mongo.MongoParkingLotTest" time="0.001"/>
+  <testcase name="testMongoParkingLotToString()" classname="com.docomo.admin.entity.mongo.MongoParkingLotTest" time="0.012"/>
+  <testcase name="testParkingLotStatusEnum()" classname="com.docomo.admin.entity.mongo.MongoParkingLotTest" time="0.001"/>
+  <testcase name="testMongoParkingLotEquality()" classname="com.docomo.admin.entity.mongo.MongoParkingLotTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

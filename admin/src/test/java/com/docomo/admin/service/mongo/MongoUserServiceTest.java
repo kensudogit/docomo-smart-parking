@@ -2,16 +2,14 @@ package com.docomo.admin.service.mongo;
 
 import com.docomo.admin.entity.mongo.MongoUser;
 import com.docomo.admin.repository.mongo.MongoUserRepository;
-import com.docomo.admin.config.MongoTestConfig;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
@@ -20,7 +18,6 @@ import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest
-@ContextConfiguration(classes = MongoTestConfig.class)
 class MongoUserServiceTest {
     
     @Autowired

@@ -1,21 +1,18 @@
 package com.docomo.admin.repository.mongo;
 
 import com.docomo.admin.entity.mongo.MongoUser;
-import com.docomo.admin.config.MongoTestConfig;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-@SpringBootTest
-@ContextConfiguration(classes = MongoTestConfig.class)
+@DataMongoTest
 class MongoUserRepositoryTest {
     
     @Autowired

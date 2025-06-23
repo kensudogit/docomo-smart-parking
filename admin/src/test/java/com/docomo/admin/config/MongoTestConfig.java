@@ -6,11 +6,12 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
 import org.springframework.data.mongodb.core.convert.MongoCustomConversions;
 import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
+import org.springframework.data.mongodb.MongoDatabaseFactory;
+import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import org.springframework.data.mongodb.core.convert.DefaultDbRefResolver;
 import org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper;
-import org.springframework.data.mongodb.core.convert.MongoConverter;
 
 @TestConfiguration
 public class MongoTestConfig {
@@ -21,15 +22,18 @@ public class MongoTestConfig {
     }
 
     @Bean
-    public MongoTemplate mongoTemplate(MongoClient mongoClient) {
-        MongoConverter converter = new MappingMongoConverter(
-            new DefaultDbRefResolver(mongoClient.getDatabase("test")),
-            new MongoMappingContext()
+    public MongoDatabaseFactory mongoDatabaseFactory(MongoClient mongoClient) {
+        return new SimpleMongoClientDatabaseFactory(mongoClient, "test");
+    }
+
+    @Bean
+    public MongoTemplate mongoTemplate(MongoDatabaseFactory mongoDatabaseFactory, MongoClient mongoClient) {
+        MappingMongoConverter converter = new MappingMongoConverter(
+            new DefaultDbRefResolver(mongoDatabaseFactory), new MongoMappingContext()
         );
-        ((MappingMongoConverter) converter).setTypeMapper(new DefaultMongoTypeMapper(null));
-        ((MappingMongoConverter) converter).setCustomConversions(mongoCustomConversions());
-        
-        return new MongoTemplate(mongoClient, "test");
+        converter.setTypeMapper(new DefaultMongoTypeMapper(null));
+        converter.setCustomConversions(mongoCustomConversions());
+        return new MongoTemplate(mongoDatabaseFactory, converter);
     }
 
     @Bean
